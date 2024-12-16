@@ -8,8 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 
-    connect(ui->btnCount, SIGNAL(clicked()), this, SLOT(on_btnCount_clicked()), Qt::UniqueConnection);
-    connect(ui->btnReset, SIGNAL(clicked()), this, SLOT(on_btnReset_clicked()), Qt::UniqueConnection);
+    connect(ui->btnCount, SIGNAL(clicked()), this, SLOT(handleBtnCountClick()));
+    connect(ui->btnReset, SIGNAL(clicked()), this, SLOT(handleBtnResetClick()));
 }
 
 
@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_btnCount_clicked()
+void MainWindow::handleBtnCountClick()
 {
 
     counter++;
@@ -29,7 +29,7 @@ void MainWindow::on_btnCount_clicked()
 }
 
 
-void MainWindow::on_btnReset_clicked()
+void MainWindow::handleBtnResetClick()
 {
     counter = 0;
     QString s = QString::number(counter);

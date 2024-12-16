@@ -21,9 +21,9 @@ public:
     void setCounter(int newCounter);
 
 private slots:
-    void on_btnCount_clicked();
+    void handleBtnCountClick();
 
-    void on_btnReset_clicked();
+    void handleBtnResetClick();
 
 private:
     Ui::MainWindow *ui;
