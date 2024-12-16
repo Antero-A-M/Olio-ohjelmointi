@@ -6,16 +6,16 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+
+    connect(ui->btnCount, SIGNAL(clicked()), this, SLOT(on_btnCount_clicked()), Qt::UniqueConnection);
+    connect(ui->btnReset, SIGNAL(clicked()), this, SLOT(on_btnReset_clicked()), Qt::UniqueConnection);
 }
+
 
 MainWindow::~MainWindow()
 {
     delete ui;
-
-    connect(ui->btnCount, SIGNAL(clicked()), this, SLOT(on_btnCount_clicked()));
-    connect(ui->btnReset, SIGNAL(clicked()), this, SLOT(on_btnReset_clicked()));
-
-
 }
 
 void MainWindow::on_btnCount_clicked()
